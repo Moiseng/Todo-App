@@ -23,6 +23,37 @@ export const styles = StyleSheet.create({
         textTransform: 'uppercase',
     },
     inputContainer: {
-
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        shadowOffset: {width: 0, height: 3},
+        shadowColor: '#171717',
+        shadowOpacity: .1,
+    },
+    input: {
+        backgroundColor: '#F3F3F3',
+        flex: 1,
+        fontSize: 18,
+        height: 35,
+    },
+    addButton: {
+        backgroundColor: '#FFCE00',
+        width: 100,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    addButtonText: {
+        color: '#171717',
+        fontSize: 18,
+        fontWeight: '700',
+    },
+    todoItem: {
+        width: '100%',
+        height: 40,
+        borderBottomColor: '#ddd',
+        borderBottomWidth: 1,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        paddingLeft: 15,
     }
 });
