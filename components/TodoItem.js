@@ -1,10 +1,11 @@
 import React from 'react';
 import {Text,Button, TouchableOpacity} from 'react-native';
 import {styles} from "../styles/style";
+import {Badge} from "react-native-elements";
 
 export default class TodoItem extends React.Component{
     constructor (props) {
-        super(props)
+        super(props);
     }
 
     render() {
@@ -13,16 +14,17 @@ export default class TodoItem extends React.Component{
         return (
             <TouchableOpacity
                 style={styles.todoItem}
-                onPress={() => this.props.toggleDone()}
+                onPress={() => this.props.toggleMenuTaskVisibility()}
+                onLongPress={() => this.props.displayRename()}
+                /*onPress={() => this.props.changeStatus(this.props.todoItem)}*/
             >
-                <Text style={(todoItem.done) ? {color: '#AAAAAA'} : {color: '#313131'}}>
+                <Text>
                     {todoItem.title}
                 </Text>
 
-                <Button
-                    title="Supprimer"
-                    color={(todoItem.done) ? 'rgba(200,0,0,0.5)' : 'rgba(255,0,0,1)'}
-                    onPress={() => this.props.removeTodo()}
+                <Badge
+                    badgeStyle={{transform: [{scaleX: 1.1}, {scaleY: 1.1}], backgroundColor: '#000', justifyContent: 'center', alignItems: 'center'}}
+                    value={<Text style={{color: '#FFF', paddingLeft: 3, paddingRight: 3, paddingTop: 3, paddingBottom: 4}}>{todoItem.todo}</Text>}
                 />
             </TouchableOpacity>
         );
